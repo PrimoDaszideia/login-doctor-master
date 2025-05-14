@@ -1,0 +1,5 @@
+pandas
+openpyxl
+
+#Digite no seu terminal: pip install -r requirements.txt
+#Isso instalará todas as bibliotecas essenciais para o funcionamento do nosso sistema
