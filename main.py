@@ -3,8 +3,8 @@ import tkinter as tk
 
 # Criar janela principal
 janela = tk.Tk()
-janela.title("Menu de Funções Matemáticas")
-janela.geometry("300x300")
+janela.title("Login Doctor Master")
+janela.geometry("500x600")
 
 '''# Título
 titulo = tk.Label(janela, text="Escolha uma funcionalidade:", font=("Arial", 14))
