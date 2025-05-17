@@ -21,4 +21,5 @@ btn_calculadora = tk.Button(janela, text="Calculadora", command=abrir_calculador
 btn_calculadora.pack(pady=5)
 
 # Iniciar a interface'''
+
 janela.mainloop()
