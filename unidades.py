@@ -8,10 +8,10 @@ unidadesEmails = (
     },
     
     {
-     'unidade': "jjj",
-     'email': "jjj",
-     'cnpj': "jjj",
-     'servidor': "jjj"
+     'unidade': "Clinica de Olhos Pre-Visao LTDA",
+     'email': "copvltda.com",
+     'cnpj': "07.914.629/0001-96",
+     'servidor': "RJ"
     },
 
     {
@@ -55,5 +55,34 @@ unidadesEmails = (
      'cnpj': "53.252.299/0001-38",
      'servidor': "DF"
     },
+
+    {
+     'unidade': "Hospital Mahatma Gandhi",
+     'email': "hmahatmag.com",
+     'cnpj': "47.078.019/0026-72",
+     'servidor': "SC"
+    },
+
+    {
+     'unidade': "Dr. Valderio - Servicos Medicos",
+     'email': "drvalerio.com",
+     'cnpj': "50.324.831/0001-97",
+     'servidor': "AL"
+    },
+
+    {
+     'unidade': "Clinica Odontologica e Servicos Hospitalares Tv Benjamin Constant LTDA Scp",
+     'email': "coshtbc.com",
+     'cnpj': "49.083.285/0001-60",
+     'servidor': "BH"
+    },
+
+    {
+     'unidade': "Clinica Souza Vargas",
+     'email': "csouzavargas.com",
+     'cnpj': "53.247.265/0001-55",
+     'servidor': "DF"
+    },
+
 
 )
