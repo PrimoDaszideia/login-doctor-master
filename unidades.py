@@ -1,10 +1,10 @@
 unidadesEmails = (
 
     {
-    'unidade': "teste",
-    'email': "teste.com",
-    'cnpj': "00.000.000/0000-00",
-    'servidor': "jp"
+    'unidade': "Clinica de Endocrinologia e Oftalmologia",
+    'email': "cendoo.com",
+    'cnpj': "07.159.792/0001-90",
+    'servidor': "MS"
     },
     
     {
@@ -84,5 +84,60 @@ unidadesEmails = (
      'servidor': "DF"
     },
 
+    {
+     'unidade': "Clinica Hodontologica Sao Jose",
+     'email': "chsj.com",
+     'cnpj': "41.625.666/0001-12",
+     'servidor': "MA"
+    },
+
+    {
+     'unidade': "Gaspar Vianna",
+     'email': "gasparvianna.com",
+     'cnpj': "23.077.928/0001-70",
+     'servidor': "AP"
+    },
+
+    {
+     'unidade': "Clinica Sao Francisco de Assis LTDA",
+     'email': "csfaltda.com",
+     'cnpj': "05.552.239/0001-98",
+     'servidor': "MG"
+    },
+
+    {
+     'unidade': "Hospital e Clinica de Medicina Veterinaria Sena Madureira LTDA",
+     'email': "hcmvsm.com",
+     'cnpj': "62.338.660/0002-15",
+     'servidor': "SP"
+    },
+
+    {
+     'unidade': "Clinica Cardiologica Claudio Castro LTDA",
+     'email': "clinicaccc.com",
+     'cnpj': "39.198.122/0001-70",
+     'servidor': "RJ"
+    },
+
+     {
+     'unidade': "Lifetec Hospitalar",
+     'email': "lifetec.com",
+     'cnpj': "13.704.844/0002-46",
+     'servidor': "NG"
+    },
+
+    {
+     'unidade': "Hospital Rio Amazonas",
+     'email': "hrioamazonas.com",
+     'cnpj': "63.554.067/0145-71",
+     'servidor': "AM"
+    },
+
+    {
+     'unidade': "Complexo Hospitalar Sul",
+     'email': "chsul.com",
+     'cnpj': "35.458.791/0005-06",
+     'servidor': "AM"
+    },
 
 )
