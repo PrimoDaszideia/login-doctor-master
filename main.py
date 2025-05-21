@@ -1,25 +1,39 @@
-import tkinter as tk
-#from funcoes import gerar_tabuada  # Importa a função do outro arquivo
+from tkinter import *
+from tkinter import ttk
+from tkinter import Tk
 
-# Criar janela principal
-janela = tk.Tk()
-janela.title("Login Doctor Master")
-janela.geometry("500x600")
 
-'''# Título
-titulo = tk.Label(janela, text="Escolha uma funcionalidade:", font=("Arial", 14))
+# Janela pricipal
+appMain = Tk()
+appMain.title("Login Doctor Master")
+appMain.iconbitmap("img/surgeon.ico")
+appMain.geometry("800x450")
+
+# Seja Bem-Vindo
+titulo = ttk.Label(appMain, text="Seja Bem-Vindo!", font=("Arial", 14))
 titulo.pack(pady=10)
 
+#entrada de nomes
+title_name = ttk.Label(appMain, text="Nome do Especialista")
+title_name.pack(pady= 4)
+entry_name = ttk.Entry(appMain, width= 35)
+entry_name.pack(pady= 1)
+
+
+#opções de login
+'''title_opcoes = ["Dr." ,"Dra.","Recepcionista"]
+opcoes_var = StringVar(value="Dr")
+OptionMenu(appMain, opcoes_var, *title_opcoes)'''
+
+#entrada de especialidade
+ttk.Label(appMain, text= "Especialidade: ").pack()
+entry_especialidade = Entry(appMain, width = 35)
+entry_especialidade.pack()
+
+
 # Botões
-btn_tabuada = tk.Button(janela, text="Tabuada", command=abrir_tabuada)
-btn_tabuada.pack(pady=5)
+#btn_tabuada = tk.Button(janela, text="Tabuada", command=abrir_tabuada)
+#btn_tabuada.pack(pady=5)
 
-btn_conversor = tk.Button(janela, text="Conversor de Temperatura", command=abrir_conversor)
-btn_conversor.pack(pady=5)
 
-btn_calculadora = tk.Button(janela, text="Calculadora", command=abrir_calculadora)
-btn_calculadora.pack(pady=5)
-
-# Iniciar a interface'''
-
-janela.mainloop()
+appMain.mainloop()
