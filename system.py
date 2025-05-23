@@ -43,3 +43,43 @@ def gerador_de_email(nome,titulo,unidade_de_email):
     prefixo =  titulo.lower(). replace(".","")
 
     return f"{prefixo}{nome_formatado}@{unidade_de_email}" 
+
+#Gerador de senha
+
+def gerador_de_senha(email):
+
+    return email.split("@")[0]
+
+#Criador de login
+
+def criar_login(nome,especialidade,nome_de_unidade,titulo):
+
+    unidade = buscar_unidade(nome_de_unidade)
+    if not unidade: 
+        return {"erro": True, "mensagem":"unidade não encontrada"}  
+
+    nome_formatado = formatar_nome(titulo,nome)
+    email = gerador_de_email(titulo,nome,unidade["email"])
+    senha = gerador_de_senha(email)
+
+    dados_do_login = {
+
+     "nome": nome_formatado,
+     "especialidade": especialidade,
+     "unidade": unidade["unidade"],
+     "email": email,
+     "senha": senha
+    }
+
+    logins_criados.append(dados_do_login)
+
+    mensagem = f"""
+
+    Nome: {nome_formatado}
+    Especialidade: {especialidade}
+    Unidade: {unidade['unidade']}
+    Email: {email}
+    Senha: {senha}
+
+    """
+    return {"erro": False, "mensagem": mensagem.strip()} 
