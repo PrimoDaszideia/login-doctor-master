@@ -2,6 +2,7 @@
 
 from unidades import unidadesEmails
 import pandas as pd
+import pyperclip
 
 logins_criados = []
 
