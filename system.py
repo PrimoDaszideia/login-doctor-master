@@ -25,3 +25,21 @@ def lista_de_sugeridas(texto):
             if texto.lower() in valor.lower() and unidade["unidade"] not in sugestoes:
                 sugestoes.append(unidade["unidade"])
     return sugestoes
+
+#Formatação de nome
+
+def formatar_nome(nome,titulo):
+
+    if titulo.lower() in ["dr.","dra."]:
+        return f"{nome} {titulo}"
+
+    return nome 
+
+#Gerar email
+
+def gerador_de_email(nome,titulo,unidade_de_email):
+
+    nome_formatado = "".join (nome.lower().split()) 
+    prefixo =  titulo.lower(). replace(".","")
+
+    return f"{prefixo}{nome_formatado}@{unidade_de_email}" 
