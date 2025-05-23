@@ -83,3 +83,30 @@ def criar_login(nome,especialidade,nome_de_unidade,titulo):
 
     """
     return {"erro": False, "mensagem": mensagem.strip()} 
+
+#Exportar do excel
+
+def exportar_logins(nome_de_arquivo = "logins.xlsx"):
+    if not logins_criados:
+        return {"erro": True, "mensagem": "Nenhum login criado."}
+
+    df = pd.DataFrame(logins_criados) 
+    df.to_excel(nome_de_arquivo, index= False)
+
+    return {"erro": False, "mensagem": "Arquivo salvo com sucesso."}
+
+#Copiar para a área de transferência
+
+def copiar_logins():
+    if not logins_criados:
+        return {"erro": True, "mensagem": "Nada para copiar."}
+
+    texto = "" 
+
+
+    for login in logins_criados: 
+        texto += f"{login['nome']} / {login['email']} / {login['senha']} \n" 
+
+    pyperclip.copy(texto.strip())
+
+    return {"erro": False, "mensagem": "Logins copiados para a área de transferência."}
