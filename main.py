@@ -49,6 +49,8 @@ entry_unidade.pack(pady=1)
 # Botões
 
 planilha_unidade = tk.Button(appMain, text= "Listas de Login")
+bnt_unidade = tk.Button(appMain, text= "Exportar Unidades", command=exportar_unidades)
+bnt_unidade.pack(pady=5)
 btn_login = tk.Button(appMain, image=icone_tk ,text="Ver Logins", compound="left")
 btn_login.pack(pady=5)
 botao_image = icone_tk

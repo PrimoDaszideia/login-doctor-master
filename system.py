@@ -96,6 +96,13 @@ def exportar_logins(nome_de_arquivo = "logins.xlsx"):
 
     return {"erro": False, "mensagem": "Arquivo salvo com sucesso."}
 
+def exportar_unidades(nome_de_arquivo = "unidades.xlsx"):
+
+    df = pd.DataFrame(unidadesEmails) 
+    df.to_excel(nome_de_arquivo, index= False)
+
+    return {"erro": False, "mensagem": "Arquivo salvo com sucesso."}
+
 #Copiar para a área de transferência
 
 def copiar_logins():
