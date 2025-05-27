@@ -28,17 +28,20 @@ adicionar_login_tk = ImageTk.PhotoImage(adicionar_login)
 titulo = ttk.Label(appMain, text="Seja Bem-Vindo!", font=("Arial", 14))
 titulo.pack(pady=10)
 
+#Escolha de Prefixo
+
+prefixo_opcoes = ["Dr." ,"Dra.","Recepcionista"]
+valor_inicial = tk.StringVar(value=prefixo_opcoes[0])
+OptionMenu(appMain, valor_inicial, *prefixo_opcoes)
+menu_option = tk.OptionMenu(appMain, valor_inicial, *prefixo_opcoes)
+menu_option.pack(pady=10)
+menu_option.pack(padx=10)
 
 #entrada de nomes
 title_name = ttk.Label(appMain, text="Nome do Especialista:")
 title_name.pack(pady= 4)
 entry_name = ttk.Entry(appMain, width= 35)
 entry_name.pack(pady= 1)
-
-#opções de login
-'''title_opcoes = ["Dr." ,"Dra.","Recepcionista"]
-opcoes_var = StringVar(value="Dr")
-OptionMenu(appMain, opcoes_var, *title_opcoes)'''
 
 #entrada de especialidade
 ttk.Label(appMain, text= "Especialidade: ").pack()
