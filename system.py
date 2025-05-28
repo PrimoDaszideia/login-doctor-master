@@ -29,10 +29,10 @@ def lista_de_sugeridas(texto):
 
 #Formatação de nome
 
-def formatar_nome(nome,titulo):
+def formatar_nome(titulo,nome):
 
     if titulo.lower() in ["dr.","dra."]:
-        return f"{nome} {titulo}"
+        return f"{titulo} {nome}"
 
     return nome 
 

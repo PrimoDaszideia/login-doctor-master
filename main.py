@@ -66,6 +66,8 @@ bnt_unidade = excel_tk
 btn_login = tk.Button(appMain, image=icone_tk ,text="Ver Logins", compound="left")
 btn_login.pack(pady=5)
 botao_image = icone_tk
+bnt_export_login = tk.Button(appMain, text = 'Exportar Login', command= exportar_logins)
+bnt_export_login.pack(pady=5)
 
 
 appMain.mainloop()
