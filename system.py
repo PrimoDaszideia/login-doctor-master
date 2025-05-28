@@ -39,7 +39,7 @@ def formatar_nome(titulo,nome):
 #Gerar email
 
 def gerador_de_email(nome,titulo,unidade_de_email):
-
+#fazer correção de ordem
     nome_formatado = "".join (nome.lower().split()) 
     prefixo =  titulo.lower(). replace(".","")
 
