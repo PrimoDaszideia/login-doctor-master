@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import Tk
 import tkinter as tk
+from events import *
 from PIL import Image, ImageTk
 from system import *
 
