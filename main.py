@@ -64,7 +64,9 @@ entry_especialidade.pack()
 
 #entrada de unidade + autocomplete
 
-ttk.Label(appMain, text="Unidade:").pack()
+unidade = tk.Label(appMain, text="Clique aqui", fg="blue", cursor="hand2")
+unidade.pack()
+unidade.bind("<Button-1>", lambda e: event_autocompletar())
 entry_unidade = ttk.Entry(appMain, width= 35)
 entry_unidade.pack(pady=1)
 
@@ -72,7 +74,12 @@ entry_unidade.pack(pady=1)
 # Botões
 
 #botão de adicionar
-bnt_adicionar = tk.Button(appMain, image= adicionar_login_tk ,text = " Adicionar Login", compound="left", command=event_adicionar)
+bnt_adicionar = tk.Button(appMain, 
+    image= adicionar_login_tk ,
+    text = " Adicionar Login", 
+    compound="left", 
+    command=lambda: event_adicionar(entry_name,entry_especialidade,entry_unidade,valor_inicial)
+)
 bnt_adicionar.pack(side= tk.LEFT, padx = (40,5))
 
 #botão de excluir logins
@@ -84,15 +91,31 @@ btn_ver_login = tk.Button(appMain, image=ver_login_tk ,text="Ver Logins", compou
 btn_ver_login.pack(side= tk.LEFT, padx= 5)
 
 #botão de copiar login
-bnt_copiar_login = tk.Button(appMain, image=copiar_tk ,text = 'Copiar Logins', compound="left" ,command= copiar_logins)
+bnt_copiar_login = tk.Button(appMain, 
+    image=copiar_tk ,text = 
+    'Copiar Logins', 
+    compound="left" ,
+    command= lambda: event_copiar()
+                             
+)
 bnt_copiar_login.pack(side= tk.LEFT, padx= 5)
 
 #botão de baixar login para xlsx
-bnt_baixar_login = tk.Button(appMain, image= baixar_login_tk, text = 'Exportar Logins', compound= "left", command= exportar_logins)
+bnt_baixar_login = tk.Button(appMain, 
+    image= baixar_login_tk, 
+    text = 'Exportar Logins', 
+    compound= "left", 
+    command= lambda: event_exportar_login()
+)
 bnt_baixar_login.pack(side= tk.LEFT, padx= 5)
 
 #botão de exportar unidades para xlsx
-bnt_unidade = tk.Button(appMain, image= excel_tk,text= " Exportar Unidades", compound="left",command=exportar_unidades)
+bnt_unidade = tk.Button(appMain, 
+    image= excel_tk,
+    text= " Exportar Unidades", 
+    compound="left",
+    command= event_unidade()
+)
 bnt_unidade.pack(side= tk.LEFT, padx= 5)
 
 
