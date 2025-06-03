@@ -72,7 +72,7 @@ entry_unidade.pack(pady=1)
 # Botões
 
 #botão de adicionar
-bnt_adicionar = tk.Button(appMain, image= adicionar_login_tk ,text = " Adicionar Login", compound="left")
+bnt_adicionar = tk.Button(appMain, image= adicionar_login_tk ,text = " Adicionar Login", compound="left", command=event_adicionar)
 bnt_adicionar.pack(side= tk.LEFT, padx = (40,5))
 
 #botão de excluir logins
