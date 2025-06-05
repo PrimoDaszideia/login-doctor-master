@@ -3,7 +3,6 @@
 from unidades import unidadesEmails
 import pandas as pd
 import pyperclip
-from main import prefixo_opcoes
 
 logins_criados = []
 

@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import Tk
 import tkinter as tk
-from events import *
+from events import (event_unidade,event_selecionar,event_adicionar,event_autocompletar,event_copiar,event_exportar_login)
 from PIL import Image, ImageTk
 from system import *
 
@@ -44,7 +44,7 @@ titulo.pack(pady=10)
 
 #Escolha de Prefixo
 
-prefixo_opcoes = ["Selecione", "Dr." ,"Dra.","Recepcionista"]
+prefixo_opcoes = ["Dr." ,"Dra.","Recepcionista"]
 valor_inicial = tk.StringVar(value=prefixo_opcoes[0])
 OptionMenu(appMain, valor_inicial, *prefixo_opcoes)
 menu_option = tk.OptionMenu(appMain, valor_inicial, *prefixo_opcoes)
@@ -64,14 +64,14 @@ entry_especialidade.pack()
 
 #entrada de unidade + autocomplete
 
-ttk.Label(appMain, text= "Unidade: ").pack()
+unidade = tk.Label(appMain, text="Unidade").pack()
 entry_unidade = ttk.Entry(appMain, width= 35)
 entry_unidade.pack(pady=1)
 
-listbox_sugestoes = Listbox(appMain, height= 4, width= 40)
+listbox_sugestoes = Listbox(appMain, height=4, width= 35)
 listbox_sugestoes.place_forget()
-entry_unidade.bind("<KeyRelease>", lambda e: event_autocompletar(entry_unidade,listbox_sugestoes))
-listbox_sugestoes.bind("<ButtonRelease>",lambda e:  event_selecionar(entry_unidade,listbox_sugestoes)) 
+entry_unidade.bind("<KeyRelease>", lambda e: event_autocompletar(entry_unidade, listbox_sugestoes))
+listbox_sugestoes.bind("<ButtonRelease-1>", lambda e: event_selecionar(entry_unidade, listbox_sugestoes))
 
 # Botões
 

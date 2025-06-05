@@ -6,7 +6,6 @@ from system import (
     exportar_unidades,
     copiar_logins,
     lista_de_sugeridas,
-    selecao_prefixo,
     logins_criados
 )
 
@@ -72,10 +71,4 @@ def event_selecionar(entry_unidades,listbox_sugestoes):
     entry_unidades.delete(0, tk.END)
     entry_unidades.insert(0, selecao)
     listbox_sugestoes.place_forget()
-
-def event_prefixo():
-
-    resultado = selecao_prefixo
-
-    if resultado["erro"]:
-        messagebox.showerror("Erro", resultado["mensagem"])
+    
