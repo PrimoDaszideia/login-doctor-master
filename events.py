@@ -71,4 +71,3 @@ def event_selecionar(entry_unidades,listbox_sugestoes):
     entry_unidades.delete(0, tk.END)
     entry_unidades.insert(0, selecao)
     listbox_sugestoes.place_forget()
-    

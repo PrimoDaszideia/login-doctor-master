@@ -38,10 +38,13 @@ def formatar_nome(titulo,nome):
 
 #Gerar email
 
-def gerador_de_email(nome,titulo,unidade_de_email):
-#fazer correção de ordem
+def gerador_de_email(titulo,nome,unidade_de_email):
+
     nome_formatado = "".join (nome.lower().split()) 
     prefixo =  titulo.lower(). replace(".","")
+
+    if titulo == "Recepcionista":
+        return f"{nome_formatado}@{unidade_de_email}"
 
     return f"{prefixo}{nome_formatado}@{unidade_de_email}" 
 
@@ -113,15 +116,8 @@ def copiar_logins():
 
 
     for login in logins_criados: 
-        texto += f"{login['nome']} / {login['email']} / {login['senha']} \n" 
+        texto += f"*---------------*\n*Nome:* {login['nome']} \n*Email:* {login['email']}\n*Senha:* {login['senha']} \n"
 
     pyperclip.copy(texto.strip())
 
-    return {"erro": False, "mensagem": "Logins copiados para a área de transferência."}
-
-def selecao_prefixo(prefixo):
-
-    prefixo = prefixo_opcoes
-
-    if prefixo == "selecione":
-        return {"erro": True, "mensagem": "Você esqueceu de selecionar o prefixo."}
+    return {"erro": False, "mensagem": "Logins copiados para a área de transferência."} 
