@@ -3,6 +3,7 @@
 from unidades import unidadesEmails
 import pandas as pd
 import pyperclip
+from main import prefixo_opcoes
 
 logins_criados = []
 
@@ -118,3 +119,10 @@ def copiar_logins():
     pyperclip.copy(texto.strip())
 
     return {"erro": False, "mensagem": "Logins copiados para a área de transferência."}
+
+def selecao_prefixo(prefixo):
+
+    prefixo = prefixo_opcoes
+
+    if prefixo == "selecione":
+        return {"erro": True, "mensagem": "Você esqueceu de selecionar o prefixo."}

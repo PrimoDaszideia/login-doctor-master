@@ -6,6 +6,7 @@ from system import (
     exportar_unidades,
     copiar_logins,
     lista_de_sugeridas,
+    selecao_prefixo,
     logins_criados
 )
 
@@ -61,14 +62,20 @@ def event_autocompletar(entry_unidade,listbox_sugestoes):
         for z in sugestoes:
             listbox_sugestoes.insert(tk.END, z)
 
-        listbox_sugestoes.place(x = entry_unidade.winfo_x(), y = entry_unidade.winfo_y() + entry_unidade.winfo_heitgh())
+        listbox_sugestoes.place(x = entry_unidade.winfo_x(), y = entry_unidade.winfo_y() + entry_unidade.winfo_height())
     else: 
         listbox_sugestoes.place_forget()
 
 def event_selecionar(entry_unidades,listbox_sugestoes):
 
-    selecao = listbox_sugestoes.get(tk.ANCHO)
+    selecao = listbox_sugestoes.get(tk.ANCHOR)
     entry_unidades.delete(0, tk.END)
-    entry_unidades.inserct(0, selecao)
+    entry_unidades.insert(0, selecao)
     listbox_sugestoes.place_forget()
-    
+
+def event_prefixo():
+
+    resultado = selecao_prefixo
+
+    if resultado["erro"]:
+        messagebox.showerror("Erro", resultado["mensagem"])

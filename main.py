@@ -44,7 +44,7 @@ titulo.pack(pady=10)
 
 #Escolha de Prefixo
 
-prefixo_opcoes = ["Dr." ,"Dra.","Recepcionista"]
+prefixo_opcoes = ["Selecione", "Dr." ,"Dra.","Recepcionista"]
 valor_inicial = tk.StringVar(value=prefixo_opcoes[0])
 OptionMenu(appMain, valor_inicial, *prefixo_opcoes)
 menu_option = tk.OptionMenu(appMain, valor_inicial, *prefixo_opcoes)
@@ -64,12 +64,14 @@ entry_especialidade.pack()
 
 #entrada de unidade + autocomplete
 
-unidade = tk.Label(appMain, text="Clique aqui", fg="blue", cursor="hand2")
-unidade.pack()
-unidade.bind("<Button-1>", lambda e: event_autocompletar())
+ttk.Label(appMain, text= "Unidade: ").pack()
 entry_unidade = ttk.Entry(appMain, width= 35)
 entry_unidade.pack(pady=1)
 
+listbox_sugestoes = Listbox(appMain, height= 4, width= 40)
+listbox_sugestoes.place_forget()
+entry_unidade.bind("<KeyRelease>", lambda e: event_autocompletar(entry_unidade,listbox_sugestoes))
+listbox_sugestoes.bind("<ButtonRelease>",lambda e:  event_selecionar(entry_unidade,listbox_sugestoes)) 
 
 # Botões
 
@@ -114,7 +116,7 @@ bnt_unidade = tk.Button(appMain,
     image= excel_tk,
     text= " Exportar Unidades", 
     compound="left",
-    command= event_unidade()
+    command= lambda: event_unidade()
 )
 bnt_unidade.pack(side= tk.LEFT, padx= 5)
 
