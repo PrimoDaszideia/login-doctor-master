@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import Tk
 import tkinter as tk
-from events import (event_unidade,event_selecionar,event_adicionar,event_autocompletar,event_copiar,event_exportar_login,event_excluir_logins)
+from events import (event_unidade,event_mostrar_logins,event_selecionar,event_adicionar,event_autocompletar,event_copiar,event_exportar_login,event_excluir_logins)
 from PIL import Image, ImageTk
 from system import *
 
@@ -94,7 +94,12 @@ bnt_excluir_logins = tk.Button(appMain,
 bnt_excluir_logins.pack(side= tk.LEFT, padx = 5)
 
 #botão de ver login
-btn_ver_login = tk.Button(appMain, image=ver_login_tk ,text="Ver Logins", compound="left")
+btn_ver_login = tk.Button(appMain, 
+    image=ver_login_tk ,
+    text="Ver Logins", 
+    compound="left",
+    command = event_mostrar_logins
+    )
 btn_ver_login.pack(side= tk.LEFT, padx= 5)
 
 #botão de copiar login

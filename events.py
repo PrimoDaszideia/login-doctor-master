@@ -90,3 +90,29 @@ def event_excluir_logins():
 
         else:
             messagebox.showinfo("Logins excluídos com sucesso.", resultado["mensagem"])
+
+#evento para abrir uma nova janela mostando os logins já criados
+
+def event_mostrar_logins():
+    if not logins_criados:
+        messagebox.showinfo("Nenhum login", "Nenhum login foi criado ainda.")
+        return
+
+    janela_logins = Toplevel()
+    janela_logins.title("Logins Criados")
+    janela_logins.geometry("500x400")
+
+    scrollbar = Scrollbar(janela_logins)
+    scrollbar.pack(side=RIGHT, fill=Y)
+
+    texto = Text(janela_logins, wrap="word", yscrollcommand=scrollbar.set)
+    texto.pack(expand=True, fill="both")
+
+    for login in logins_criados:
+        texto.insert(END, f"Nome: {login['nome']}\n")
+        texto.insert(END, f"E-mail: {login['email']}\n")
+        texto.insert(END, f"Senha: {login['senha']}\n")
+        texto.insert(END, "-"*50 + "\n")
+
+    texto.config(state="disabled")
+    scrollbar.config(command=texto.yview)
