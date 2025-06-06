@@ -85,7 +85,12 @@ bnt_adicionar = tk.Button(appMain,
 bnt_adicionar.pack(side= tk.LEFT, padx = (40,5))
 
 #botão de excluir logins
-bnt_excluir_logins = tk.Button(appMain, image= excluir_tk,  text= "Excluir Logins", compound="left", command=lambda:event_excluir_logins)
+bnt_excluir_logins = tk.Button(appMain, 
+    image= excluir_tk,  
+    text= "Excluir Logins", 
+    compound="left", 
+    command= lambda: event_excluir_logins()
+    )
 bnt_excluir_logins.pack(side= tk.LEFT, padx = 5)
 
 #botão de ver login

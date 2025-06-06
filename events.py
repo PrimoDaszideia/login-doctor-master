@@ -75,7 +75,7 @@ def event_selecionar(entry_unidades,listbox_sugestoes):
 
 def event_excluir_logins(): 
 
-    confirmacao = messagebox.askyesno("Deseja realmente excluir os logins?")
+    confirmacao = messagebox.askyesno("Confirmação", "Deseja realmente excluir os logins?")
     if confirmacao: 
         resultado = excluir_logins()
         if resultado["erro"]:
