@@ -10,6 +10,7 @@ from system import (
     excluir_logins
 )
 
+#evento de adicionar login
 def event_adicionar(entry_name,entry_especialidade,entry_unidade,valor_inicial):
 
     nome = entry_name.get()
@@ -24,6 +25,7 @@ def event_adicionar(entry_name,entry_especialidade,entry_unidade,valor_inicial):
     else:
         messagebox.showinfo("Login criado com sucesso!", resultado["mensagem"])
 
+#evento de exportar login
 def event_exportar_login():
     
     resultado = exportar_logins()
@@ -34,6 +36,7 @@ def event_exportar_login():
     else:
         messagebox.showinfo("Login exportado com sucesso!", resultado["mensagem"])
 
+#evento de exportar unidades
 def event_unidade():
 
     resultado = exportar_unidades()
@@ -44,6 +47,7 @@ def event_unidade():
     else:
         messagebox.showinfo("Unidade exportada com sucesso!", resultado["mensagem"])
 
+#evento de copiar logins
 def event_copiar():
 
     resultado = copiar_logins()
@@ -54,6 +58,7 @@ def event_copiar():
     else:
         messagebox.showinfo("Copiado para a área de trasnferência!", resultado["mensagem"])
 
+#evento de autocompletar o input de unidades
 def event_autocompletar(entry_unidade,listbox_sugestoes):
     texto = entry_unidade.get()
     sugestoes = lista_de_sugeridas(texto)
@@ -66,6 +71,7 @@ def event_autocompletar(entry_unidade,listbox_sugestoes):
     else: 
         listbox_sugestoes.place_forget()
 
+#evento de seleção de unidade
 def event_selecionar(entry_unidades,listbox_sugestoes):
 
     selecao = listbox_sugestoes.get(tk.ANCHOR)
@@ -73,6 +79,7 @@ def event_selecionar(entry_unidades,listbox_sugestoes):
     entry_unidades.insert(0, selecao)
     listbox_sugestoes.place_forget()
 
+#evento de excluir logins
 def event_excluir_logins(): 
 
     confirmacao = messagebox.askyesno("Confirmação", "Deseja realmente excluir os logins?")
@@ -83,4 +90,3 @@ def event_excluir_logins():
 
         else:
             messagebox.showinfo("Logins excluídos com sucesso.", resultado["mensagem"])
-            

@@ -122,6 +122,8 @@ def copiar_logins():
 
     return {"erro": False, "mensagem": "Logins copiados para a área de transferência."} 
 
+#função de excluir TODOS os logins
+
 def excluir_logins():
 
     logins_criados.clear()
