@@ -6,7 +6,8 @@ from system import (
     exportar_unidades,
     copiar_logins,
     lista_de_sugeridas,
-    logins_criados
+    logins_criados,
+    excluir_logins
 )
 
 def event_adicionar(entry_name,entry_especialidade,entry_unidade,valor_inicial):
@@ -71,3 +72,15 @@ def event_selecionar(entry_unidades,listbox_sugestoes):
     entry_unidades.delete(0, tk.END)
     entry_unidades.insert(0, selecao)
     listbox_sugestoes.place_forget()
+
+def event_excluir_logins(): 
+
+    confirmacao = messagebox.askyesno("Deseja realmente excluir os logins?")
+    if confirmacao: 
+        resultado = excluir_logins()
+        if resultado["erro"]:
+            messagebox.showerror("Erro", resultado["mensagem"])
+
+        else:
+            messagebox.showinfo("Logins excluídos com sucesso.", resultado["mensagem"])
+            

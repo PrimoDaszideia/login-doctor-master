@@ -121,3 +121,8 @@ def copiar_logins():
     pyperclip.copy(texto.strip())
 
     return {"erro": False, "mensagem": "Logins copiados para a área de transferência."} 
+
+def excluir_logins():
+
+    logins_criados.clear()
+    return {"erro": False, "mensagem": "Todos os logins foram excluídos com sucesso!"} 
